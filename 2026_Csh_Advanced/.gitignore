@@ -1,0 +1,34 @@
+﻿# Build results
+bin/
+obj/
+
+#Idea
+.idea/
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# MSBuild generated files
+*.AssemblyInfo.cs
+*.AssemblyInfoInputs.cache
+*.assets.cache
+*.csproj.FileListAbsolute.txt
+*.csproj.CoreCompileInputs.cache
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.genruntimeconfig.cache
+*.GlobalUsings.g.cs
+
+# Runtime configuration
+*.deps.json
+*.runtimeconfig.json
+
+# NuGet
+project.assets.json
+project.nuget.cache
+project.packagespec.json
+*.nuget.g.props
+*.nuget.g.targets
+*.nuget.dgspec.json
