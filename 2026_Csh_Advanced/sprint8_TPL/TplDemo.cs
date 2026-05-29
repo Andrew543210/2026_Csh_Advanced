@@ -144,9 +144,59 @@ namespace _2026_Csh_Advanced.sprint8_TPL
             }
         }
     }
-
+    
     // ==============================
-    // 5. Статичний клас для запуску спринта
+    // 5. Синхронізація ресурсів (SemaphoreSlim)
+    // ==============================
+    public class ModernSyncDemo
+    {
+        // Ліміт: одночасно лише 3 задачі
+        private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(3, 3);
+
+        public static async Task<int> RunModernAsync()
+        {
+            Console.WriteLine(">>> Початок асинхронної обробки...");
+            int processedCount = 0;
+            var tasks = new List<Task>();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                int taskId = i; // Створюємо локальну копію для замикання
+                
+                tasks.Add(Task.Run(async () =>
+                {
+                    // 1. Асинхронно чекаємо на вільний слот
+                    await _semaphore.WaitAsync();
+                    
+                    try
+                    {
+                        Console.WriteLine($"[Task {taskId}] Вхід у критичну секцію.");
+                        
+                        // 2. Імітуємо роботу асинхронно (не блокуємо потік)
+                        await Task.Delay(1000); 
+                        
+                        // Безпечно оновлюємо лічильник (атомарна операція)
+                        Interlocked.Increment(ref processedCount);
+                        
+                        Console.WriteLine($"[Task {taskId}] Вихід. Робота завершена.");
+                    }
+                    finally
+                    {
+                        // 3. Гарантовано звільняємо слот
+                        _semaphore.Release();
+                    }
+                }));
+            }
+
+            // 4. Очікуємо завершення всіх задач без блокування потоку
+            await Task.WhenAll(tasks);
+            
+            Console.WriteLine(">>> Всі задачі завершено.");
+            return processedCount; // Повертаємо результат
+        }
+    }
+    // ==============================
+    // 6. Статичний клас для запуску спринта
     // ==============================
     public static class TplSprint
     {
@@ -161,5 +211,42 @@ namespace _2026_Csh_Advanced.sprint8_TPL
 
             Console.WriteLine("========== End of Sprint8 ==========");
         }
+    }
+}
+
+public class Testing
+{
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(2, 2);
+    public static async Task TPLTest()
+    {
+        var tasks = new List<Task>();
+        Random rnd = new Random(); // Створюємо один раз для всіх
+
+        for (int i = 1; i <= 10; i++)
+        {
+            int taskId = i; // Це значення "зафіксовано" для кожної таски
+
+            tasks.Add(Task.Run(async () =>
+            {
+                await _semaphore.WaitAsync();
+                
+                try
+                {
+                    Console.WriteLine($"[Task {taskId}] Started. Slots left: {_semaphore.CurrentCount}");
+                    
+                    // 2. Імітація роботи
+                    await Task.Delay(rnd.Next(1000, 3000));
+                    
+                    Console.WriteLine($"[Task {taskId}] Finished.");
+                }
+                finally
+                {
+                    // 3. Гарантовано звільняємо слот
+                    _semaphore.Release();
+                }
+            }));
+        }
+
+        await Task.WhenAll(tasks);
     }
 }
