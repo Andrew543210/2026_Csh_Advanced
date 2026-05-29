@@ -1,6 +1,7 @@
 ﻿using _2026_Csh_Advanced.sprint5_Collections;
 using _2026_Csh_Advanced.sprint1_Classes;
 using _2026_Csh_Advanced.sprint2_InhPol;
+using _2026_Csh_Advanced.sprint8_TPL;
 
 class Program
 {
@@ -10,10 +11,14 @@ class Program
         //Classes.RunClasses();
         #endregion
         #region sprint2
-        Inheritance.RunInheritance();
+        //Inheritance.RunInheritance();
         #endregion
         #region sprint5
        //Collections.RunCollections();
+        #endregion
+
+        #region sprint8
+        TplSprint.RunTplSprint();
         #endregion
     }
 }
