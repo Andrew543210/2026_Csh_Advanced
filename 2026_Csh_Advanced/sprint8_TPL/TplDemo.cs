@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -200,7 +201,7 @@ namespace _2026_Csh_Advanced.sprint8_TPL
     // ==============================
     public static class TplSprint
     {
-        public static void RunTplSprint()
+        public static  void RunTplSprint()
         {
             Console.WriteLine("========== Sprint8: Multithreading & TPL ==========\n");
 
@@ -208,7 +209,6 @@ namespace _2026_Csh_Advanced.sprint8_TPL
             TaskContinuationDemo.Run();
             CancellationDemo.Run();
             SynchronizationDemo.Run();
-
             Console.WriteLine("========== End of Sprint8 ==========");
         }
     }
@@ -248,5 +248,88 @@ public class Testing
         }
 
         await Task.WhenAll(tasks);
+    }
+}
+
+public static class CarWashDemo
+{
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(2,2);
+
+    public static async Task RunSimulationAsync()
+    {
+        List<int> cars = new List<int> { 1,2,3,4,5,6,7,8,9,10 };
+        Random rnd = new Random();
+        List<Task> tasks = new List<Task>();
+        foreach (int car in cars)
+        {
+            tasks.Add(Task.Run(async() =>
+            {
+                await _semaphore.WaitAsync();
+                try
+                {
+                   await WashCarAsync(car, rnd.Next(1000, 3000));
+                }
+                finally
+                {
+                    _semaphore.Release();
+                }
+                
+            }));
+        }
+        await Task.WhenAll(tasks);
+    }
+
+    public static async Task WashCarAsync(int carId, int washTime)
+    {
+        Console.WriteLine($"Car {carId} is washing. Time left: {washTime}ms");
+        await Task.Delay(washTime);
+        Console.WriteLine($"Car {carId} is done washing.");
+    }
+}
+
+
+public static class FlightAggregatorDemo
+{
+    
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(2,2);
+    public static async Task SimulateTicketSearchAsync()
+    {
+        Console.WriteLine("\n🛫 Пошук найкращих цін на квитки розпочато...");
+        Stopwatch sw = Stopwatch.StartNew();
+        Task<int> task1 = FetchPriceAsync("Air France", 1);
+        Task<int> task2 = FetchPriceAsync("Lufthansa", 2);
+        Task<int> task3 = FetchPriceAsync("Ryanair", 3);
+        Task<int> task4 = FetchPriceAsync("KLM", 4);
+        Task<int> task5 = FetchPriceAsync("Emirates", 5);
+        
+       
+        int[] prices = await Task.WhenAll(task1, task2, task3, task4, task5);
+        
+        int bestPrice = prices.Min();
+        Console.WriteLine($"✅ Найкраща ціна знайдена: {bestPrice}$");
+    }
+    public static async Task<int> FetchPriceAsync(string companyName, int delayTimeinHours)
+    {
+        var sw = Stopwatch.StartNew();
+        Console.WriteLine($"[Запит] Шукаємо квитки у {companyName}...");
+    
+        await _semaphore.WaitAsync();
+        int ticketPrice = 0; // 1. Виправили помилку компілятора (дали дефолтне значення)
+    
+        try
+        {
+            var rnd = new Random();
+            ticketPrice = rnd.Next(20, 150); 
+
+            await Task.Delay(1000 * delayTimeinHours); // 2. Тепер тут одночасно перебуватимуть максимум 2 таски
+        }
+        finally
+        {
+            _semaphore.Release();
+            Console.WriteLine($"[Відповідь] {companyName} повернув ціну: {ticketPrice}$");
+        }
+        sw.Stop();
+        Console.WriteLine($"Time elapsed: {sw.ElapsedMilliseconds}ms.");
+        return ticketPrice;
     }
 }

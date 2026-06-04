@@ -1,11 +1,12 @@
 ﻿using _2026_Csh_Advanced.sprint5_Collections;
 using _2026_Csh_Advanced.sprint1_Classes;
 using _2026_Csh_Advanced.sprint2_InhPol;
+using _2026_Csh_Advanced.sprint10_Solid;
 using _2026_Csh_Advanced.sprint8_TPL;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         #region sprint1
         //Classes.RunClasses();
@@ -18,7 +19,14 @@ class Program
         #endregion
 
         #region sprint8
+        await FlightAggregatorDemo.SimulateTicketSearchAsync();
+        CarWashDemo.RunSimulationAsync().GetAwaiter().GetResult();
         TplSprint.RunTplSprint();
         #endregion
+        
+        #region sprint10
+        AppLogger.SolidDemo.RunSolid();
+        #endregion
+        
     }
 }
