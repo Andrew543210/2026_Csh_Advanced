@@ -3,6 +3,7 @@ using _2026_Csh_Advanced.sprint1_Classes;
 using _2026_Csh_Advanced.sprint2_InhPol;
 using _2026_Csh_Advanced.sprint10_Solid;
 using _2026_Csh_Advanced.sprint8_TPL;
+using _2026_Csh_Advanced.sprint11_Reflection;
 
 class Program
 {
@@ -19,14 +20,17 @@ class Program
         #endregion
 
         #region sprint8
-        await FlightAggregatorDemo.SimulateTicketSearchAsync();
-        CarWashDemo.RunSimulationAsync().GetAwaiter().GetResult();
-        TplSprint.RunTplSprint();
+        // await FlightAggregatorDemo.SimulateTicketSearchAsync();
+        // CarWashDemo.RunSimulationAsync().GetAwaiter().GetResult();
+        // TplSprint.RunTplSprint();
         #endregion
         
         #region sprint10
-        AppLogger.SolidDemo.RunSolid();
+        //AppLogger.SolidDemo.RunSolid();
         #endregion
-        
+
+        #region Reflection
+        ReflectionDemo.RunReflectionSprint();
+        #endregion
     }
 }
