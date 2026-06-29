@@ -32,6 +32,11 @@ app.MapControllerRoute(
     pattern: "show/{slug}",
     defaults: new { controller = "Series", action = "DetailsBySlug" }
     );
+app.MapControllerRoute(
+    name: "movies-filter",
+    pattern: "movies/{year:int}/{genre?}",
+    defaults: new { controller = "Movies", action = "FilterByYearAndGenre",genre = "all" }
+);
 
 app.MapControllerRoute(
         name: "default",
