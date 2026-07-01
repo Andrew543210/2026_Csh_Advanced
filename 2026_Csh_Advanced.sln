@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint14_MVC", "Sprint14_MV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint15_ModelBinding", "Sprint15_ModelBinding\Sprint15_ModelBinding.csproj", "{C172FAB6-F599-4E02-9A46-5DADEBDA237B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint16_EF_LearningPlatform.API", "sprint16_EF_LearningPlatform.API\sprint16_EF_LearningPlatform.API.csproj", "{146DFAA6-FE96-41D2-8782-704E40B5999A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint16_EF_LearningPlatform.DataAccess.Postgres", "sprint16_EF_LearningPlatform.DataAccess.Postgres\sprint16_EF_LearningPlatform.DataAccess.Postgres.csproj", "{5C42760D-9F8D-4765-888E-937355B0F28A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{C172FAB6-F599-4E02-9A46-5DADEBDA237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C172FAB6-F599-4E02-9A46-5DADEBDA237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C172FAB6-F599-4E02-9A46-5DADEBDA237B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146DFAA6-FE96-41D2-8782-704E40B5999A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146DFAA6-FE96-41D2-8782-704E40B5999A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146DFAA6-FE96-41D2-8782-704E40B5999A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146DFAA6-FE96-41D2-8782-704E40B5999A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C42760D-9F8D-4765-888E-937355B0F28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C42760D-9F8D-4765-888E-937355B0F28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C42760D-9F8D-4765-888E-937355B0F28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C42760D-9F8D-4765-888E-937355B0F28A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
