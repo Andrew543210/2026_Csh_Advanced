@@ -75,27 +75,28 @@ public class CoursesRepository
     
     public async Task Update(Guid id, Guid authorId, string title, string description, decimal price)
     {
-        var course = await _context.Courses.FirstOrDefaultAsync(c => c.Id == id);
-        if (course != null)
-        {
-            course.AuthorId = authorId;
-            course.Title = title;
-            course.Description = description;
-            course.Price = price;
-        }
-        await _context.SaveChangesAsync();
+        await _context.Courses
+            .Where(c => c.Id == id)
+            .ExecuteUpdateAsync(c => c
+                .SetProperty(c => c.AuthorId, authorId)
+                .SetProperty(c => c.Title, title)
+                .SetProperty(c => c.Description, description)
+                .SetProperty(c => c.Price, price));
     }
     
-    // public async Task Update2(Guid id, Guid authorId, string title, string description, decimal price)
+    // public async Task Update(Guid id, Guid authorId, string title, string description, decimal price)
     // {
-    //     await _context.Courses
-    //         .Where(c => c.Id == id)
-    //         .ExecuteUpdateAsync(c => c
-    //             .SetProperty(c => c.AuthorId, authorId)
-    //             .SetProperty(c => c.Title, title)
-    //             .SetProperty(c => c.Description, description)
-    //             .SetProperty(c => c.Price, price));
+    //     var course = await _context.Courses.FirstOrDefaultAsync(c => c.Id == id);
+    //     if (course != null)
+    //     {
+    //         course.AuthorId = authorId;
+    //         course.Title = title;
+    //         course.Description = description;
+    //         course.Price = price;
+    //     }
+    //     await _context.SaveChangesAsync();
     // }
+    
     
     public async Task Delete(Guid id)
     {
