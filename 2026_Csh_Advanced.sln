@@ -10,6 +10,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint16_EF_LearningPlatfor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint16_EF_LearningPlatform.DataAccess.Postgres", "sprint16_EF_LearningPlatform.DataAccess.Postgres\sprint16_EF_LearningPlatform.DataAccess.Postgres.csproj", "{5C42760D-9F8D-4765-888E-937355B0F28A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sprint17_UnitTesting", "sprint17_UnitTesting", "{CD2574C7-F5E5-4762-8296-42AE150CFB55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.BusinessLogic", "Sprint17_PromoCodeEngine.BusinessLogic\Sprint17_PromoCodeEngine.BusinessLogic.csproj", "{E59E0B66-95E8-44BE-9BDA-909AD81729DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.BusinessLogic.Tests", "Sprint17_PromoCodeEngine.BusinessLogic.Tests\Sprint17_PromoCodeEngine.BusinessLogic.Tests.csproj", "{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.API", "Sprint17_PromoCodeEngine.API\Sprint17_PromoCodeEngine.API.csproj", "{E9168968-3C3E-43A8-9ACC-24D3E28D8390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.API.IntegrationTests", "Sprint17_PromoCodeEngine.API.IntegrationTests\Sprint17_PromoCodeEngine.API.IntegrationTests.csproj", "{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +46,27 @@ Global
 		{5C42760D-9F8D-4765-888E-937355B0F28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C42760D-9F8D-4765-888E-937355B0F28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C42760D-9F8D-4765-888E-937355B0F28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59E0B66-95E8-44BE-9BDA-909AD81729DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59E0B66-95E8-44BE-9BDA-909AD81729DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59E0B66-95E8-44BE-9BDA-909AD81729DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59E0B66-95E8-44BE-9BDA-909AD81729DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9168968-3C3E-43A8-9ACC-24D3E28D8390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9168968-3C3E-43A8-9ACC-24D3E28D8390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9168968-3C3E-43A8-9ACC-24D3E28D8390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9168968-3C3E-43A8-9ACC-24D3E28D8390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E59E0B66-95E8-44BE-9BDA-909AD81729DF} = {CD2574C7-F5E5-4762-8296-42AE150CFB55}
+		{BD08DBD9-481E-4EA6-87DD-F2AADC8312FB} = {CD2574C7-F5E5-4762-8296-42AE150CFB55}
+		{E9168968-3C3E-43A8-9ACC-24D3E28D8390} = {CD2574C7-F5E5-4762-8296-42AE150CFB55}
+		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A} = {CD2574C7-F5E5-4762-8296-42AE150CFB55}
 	EndGlobalSection
 EndGlobal
