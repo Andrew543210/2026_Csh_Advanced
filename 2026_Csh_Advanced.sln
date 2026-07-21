@@ -20,6 +20,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint17_PromoCodeEngine.API.IntegrationTests", "Sprint17_PromoCodeEngine.API.IntegrationTests\Sprint17_PromoCodeEngine.API.IntegrationTests.csproj", "{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint19_MinimalAPI", "sprint19_MinimalAPI\sprint19_MinimalAPI.csproj", "{FE7E4644-FAE0-4CF5-AE56-A63042B6EA6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sprint18_Auth", "sprint18_Auth\sprint18_Auth.csproj", "{DD45DA68-13E4-4856-B30C-2DD3B2064DD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint20_FluentValidation", "Sprint20_FluentValidation\Sprint20_FluentValidation.csproj", "{247D6294-B799-46A0-B2DA-17DA1A6AF01D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +68,18 @@ Global
 		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ACBC5CA-5959-4B04-8FDA-898C60235D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7E4644-FAE0-4CF5-AE56-A63042B6EA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7E4644-FAE0-4CF5-AE56-A63042B6EA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7E4644-FAE0-4CF5-AE56-A63042B6EA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7E4644-FAE0-4CF5-AE56-A63042B6EA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD45DA68-13E4-4856-B30C-2DD3B2064DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD45DA68-13E4-4856-B30C-2DD3B2064DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD45DA68-13E4-4856-B30C-2DD3B2064DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD45DA68-13E4-4856-B30C-2DD3B2064DD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247D6294-B799-46A0-B2DA-17DA1A6AF01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247D6294-B799-46A0-B2DA-17DA1A6AF01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247D6294-B799-46A0-B2DA-17DA1A6AF01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247D6294-B799-46A0-B2DA-17DA1A6AF01D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E59E0B66-95E8-44BE-9BDA-909AD81729DF} = {CD2574C7-F5E5-4762-8296-42AE150CFB55}

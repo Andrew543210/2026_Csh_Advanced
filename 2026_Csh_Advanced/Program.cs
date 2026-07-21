@@ -16,7 +16,7 @@ class Program
         //Inheritance.RunInheritance();
         #endregion
         #region sprint5
-       //Collections.RunCollections();
+       Collections.RunCollections();
         #endregion
 
         #region sprint8
@@ -30,7 +30,7 @@ class Program
         #endregion
 
         #region Reflection
-        ReflectionDemo.RunReflectionSprint();
+        //ReflectionDemo.RunReflectionSprint();
         #endregion
     }
 }

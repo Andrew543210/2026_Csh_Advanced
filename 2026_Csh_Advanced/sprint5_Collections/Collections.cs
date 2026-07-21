@@ -245,7 +245,7 @@ public class Collections
 
         Console.WriteLine("--- BlockingCollection<int> (Producer-Consumer) ---");
         var blockingCollection = new BlockingCollection<int>(5);
-
+        
         var producer = Task.Run(() =>
         {
             for (var i = 0; i < 5; i++)
@@ -254,10 +254,10 @@ public class Collections
                 Console.WriteLine($"  Producer додав: {i}");
                 Task.Delay(100).Wait();
             }
-
+        
             blockingCollection.CompleteAdding();
         });
-
+        
         var consumer = Task.Run(() =>
         {
             foreach (var item in blockingCollection.GetConsumingEnumerable())
@@ -266,11 +266,11 @@ public class Collections
                 Task.Delay(150).Wait();
             }
         });
-
+        
         Task.WaitAll(producer, consumer);
         Console.WriteLine("BlockingCollection завершив роботу.");
         Console.WriteLine();
-
+        
         Console.WriteLine("--- Паралельне додавання в ConcurrentDictionary ---");
         var parallelDict = new ConcurrentDictionary<int, int>();
 
